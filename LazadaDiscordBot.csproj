@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8061487b-e16c-4b21-b032-c270335fbfe3</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <None Update="appsettings.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <PackageReference Include="DSharpPlus" Version="4.0.0-rc2" />
+	  <PackageReference Include="DSharpPlus.Interactivity" Version="4.0.0-rc2" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
+	  <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
+    <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
+  </ItemGroup>
+
+</Project>

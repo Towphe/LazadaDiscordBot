@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LazadaDiscordBot", "LazadaDiscordBot.csproj", "{A955248E-A924-4E48-8CEC-FFB897194882}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A955248E-A924-4E48-8CEC-FFB897194882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A955248E-A924-4E48-8CEC-FFB897194882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A955248E-A924-4E48-8CEC-FFB897194882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A955248E-A924-4E48-8CEC-FFB897194882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77FDEF22-3E47-47E1-A5E1-F98C5DBC24BF}
+	EndGlobalSection
+EndGlobal

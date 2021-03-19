@@ -1,0 +1,31 @@
+﻿*** LazSearch Discord Bot ***
+
+Some notes:
+* This only works for the PH website of lazada
+* Under development
+* This is a sort of documentation
+* If you have any suggestions, feel free to send them to me :>.
+
+** Some suggested features **
+=> Search top
+=> Random search
+
+** Overall Program Features **
+
+Main Program
+* Initiate the application
+* Receive requests
+--> extract messages with !laz and their corresponding parameters
+* Send responses
+* Process things asynchronously
+
+Discord Interaction Part (DSharpPlus)
+* !lazhelp : help command that displays commands
+* !lazsearch : searches the proceding string
+
+Lazada Search Part (Selenium)
+* [Pending Method name] : Main method for LazSearch
+* [Pending Method name] : Connect to lazada url thru Selenium driver
+* [Pending Method name] : Search a string on lazada
+* [Pending Mehtod name] : Return top 3 search result as List<Product>
+* [Pending Mehtod name] : Close driver
