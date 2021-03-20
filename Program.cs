@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 using LazadaDiscordBot.DiscordAccessFiles;
+using LazadaDiscordBot.LazadaAccessFiles;
 
 namespace LazadaDiscordBot
 {
@@ -48,7 +49,11 @@ namespace LazadaDiscordBot
                     {
                         IMessageFormatter formatter = new HelpMessageFormat(e);
                         formatter.SendMessage();
-                        GC.Collect();
+                    } else if (e.Message.Content.Contains("!lazsearch"))
+                    {
+                        string query = e.Message.Content.Remove(0, 10);
+                        SearchResultMessageFormatter formatter = new SearchResultMessageFormatter(e);
+                        formatter.SendProducts(new LazSearch().Search(query, new LazSearch().Connect()));
                     }
                 });
                 return Task.CompletedTask;

@@ -8,7 +8,7 @@ namespace LazadaDiscordBot.LazadaAccessFiles
     {
         private string productName;
         public string ProductName { get; set; }
-        private string productURL;
-        public string ProductURL { get; set; }
+        private string price;
+        public string Price { get; set; }
     }
 }
