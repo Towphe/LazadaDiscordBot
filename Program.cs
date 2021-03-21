@@ -51,8 +51,10 @@ namespace LazadaDiscordBot
                         await formatter.SendMessage();
                     } else if (e.Message.Content.Contains("!lazsearch") && e.Message.Author.Username != "SimpleHiBot")
                     {
-                        string query = e.Message.Content.Remove(0, 10);
+                        Console.WriteLine($"Request : Search [{e.Message.Content.Remove(0, 11)}]");
+                        string query = e.Message.Content.Remove(0, 11);
                         SearchResultMessageFormatter formatter = new SearchResultMessageFormatter(e);
+                        await e.Message.RespondAsync($"Okay! Searching {e.Message.Content.Remove(0, 10)}");
                         await formatter.SendMessage(new LazSearch().Search(query, new LazSearch().Connect()));
                     }
                 });

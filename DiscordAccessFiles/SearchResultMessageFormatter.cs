@@ -23,9 +23,9 @@ namespace LazadaDiscordBot.DiscordAccessFiles
                 string message = "";
                 for (int i=0; i<3; i++)
                 {
-                    message += $"Product: {productResults[i].ProductName}\nPrice: {productResults[i].Price}\n";
+                    message += $"{i+1}. Product: {productResults[i].ProductName}\nPrice: {productResults[i].Price}\n\n";
                 }
-                var msg = new DiscordMessageBuilder().WithContent($"{message}").SendAsync(ctx.Channel);
+                var msg = new DiscordMessageBuilder().WithContent($"Found:\n\n{message}").SendAsync(ctx.Channel);
             });
             // Format this in a good looking way
         }
