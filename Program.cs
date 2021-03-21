@@ -15,6 +15,8 @@ using Microsoft.Extensions.Logging;
 using LazadaDiscordBot.DiscordAccessFiles;
 using LazadaDiscordBot.LazadaAccessFiles;
 
+// It currently takes 10 seconds to do a request - 3/21/2021
+
 namespace LazadaDiscordBot
 {
     class Program

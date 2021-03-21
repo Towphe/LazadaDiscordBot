@@ -13,12 +13,14 @@ namespace LazadaDiscordBot
     {
         // Add an `await` somewhere inside this method
         // Configure this later on
+        
+        /*
         public async Task MessageHandler(DiscordClient s, MessageCreateEventArgs e)
         {
             if (e.Message.Content.Contains("!lazhelp"))
             {
                 new HelpMessageFormat(e).SendMessage();
             }
-        }
+        }*/
     }
 }

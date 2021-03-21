@@ -24,7 +24,7 @@ namespace LazadaDiscordBot.DiscordAccessFiles
                     Title = "Link",
                     Url = "https://www.google.com"
                 }.Build();
-                var msg = new DiscordMessageBuilder().WithContent($"LazBotPH is a discord bot that allows you to search Lazada thru Discord! To search, kindly type: !lazsearch [product]\n\n").WithEmbed(embed).SendAsync(ctx.Channel);
+                var msg = new DiscordMessageBuilder().WithContent($"LazBotPH is a discord bot that allows you to search Lazada thru Discord! To search, kindly type: !lazsearch [product]\n\n").SendAsync(ctx.Channel);
                 Console.WriteLine("Request : Help");
             });
             // Format this in a good looking way    
