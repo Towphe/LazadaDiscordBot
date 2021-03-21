@@ -24,15 +24,12 @@ namespace LazadaDiscordBot
         {
             AppConfiguration = configService;
         }
-
         static void Main(string[] args)
         {
             MainAsync().GetAwaiter().GetResult();
         }
-        
         static async Task MainAsync()
         {
-            
             var config = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory).AddJsonFile("appsettings.json").AddUserSecrets("appsettings.json").AddUserSecrets<Program>().Build();
             var discord = new DiscordClient(new DiscordConfiguration()
             {
@@ -54,17 +51,15 @@ namespace LazadaDiscordBot
                         Console.WriteLine($"Request : Search [{e.Message.Content.Remove(0, 11)}]");
                         string query = e.Message.Content.Remove(0, 11);
                         SearchResultMessageFormatter formatter = new SearchResultMessageFormatter(e);
-                        await e.Message.RespondAsync($"Okay! Searching {e.Message.Content.Remove(0, 10)}");
-                        await formatter.SendMessage(new LazSearch().Search(query, new LazSearch().Connect()));
+                        await e.Message.RespondAsync($"Okay! Searching: {e.Message.Content.Remove(0, 10)}");
+                        await formatter.SendMessage(new LazSearch().Search(query, new LazSearch().Connect()), e);
                     }
                 });
                 return Task.CompletedTask;
             };
-
             await discord.ConnectAsync();
             await Task.Delay(-1);
         }
-
         // Make this work
         /*private async Task MessageHandler(DiscordClient s, MessageCreateEventArgs e)
         {

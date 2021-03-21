@@ -16,11 +16,15 @@ namespace LazadaDiscordBot.DiscordAccessFiles
         {
             ctx = c;
         }
-        public Task SendMessage(List<Product> productList = null)
+        public Task SendMessage(List<Product> productList = null, MessageCreateEventArgs e = null)
         {
             return Task.Run(() => 
             {
-                var msg = new DiscordMessageBuilder().WithContent($"LazBotPH is a discord bot that allows you to search Lazada thru Discord! To search, kindly type: !lazsearch [product]").SendAsync(ctx.Channel);
+                DiscordEmbed embed = new DiscordEmbedBuilder() { 
+                    Title = "Link",
+                    Url = "https://www.google.com"
+                }.Build();
+                var msg = new DiscordMessageBuilder().WithContent($"LazBotPH is a discord bot that allows you to search Lazada thru Discord! To search, kindly type: !lazsearch [product]\n\n").WithEmbed(embed).SendAsync(ctx.Channel);
                 Console.WriteLine("Request : Help");
             });
             // Format this in a good looking way    

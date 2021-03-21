@@ -10,5 +10,7 @@ namespace LazadaDiscordBot.LazadaAccessFiles
         public string ProductName { get; set; }
         private string price;
         public string Price { get; set; }
+        private string url;
+        public string Url { get; set; }
     }
 }

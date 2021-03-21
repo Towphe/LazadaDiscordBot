@@ -37,7 +37,8 @@ namespace LazadaDiscordBot.LazadaAccessFiles
                     productResults.Add(new Product()
                     {
                         ProductName = result.FindElement(By.ClassName("c16H9d")).Text,
-                        Price = result.FindElement(By.ClassName("c3gUW0")).Text
+                        Price = result.FindElement(By.ClassName("c3gUW0")).Text,
+                        Url = result.FindElement(By.ClassName("c16H9d")).FindElement(By.TagName("a")).GetAttribute("href")
                     });
                 }
                 driver.Quit();
