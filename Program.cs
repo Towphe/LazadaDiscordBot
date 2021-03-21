@@ -26,6 +26,7 @@ namespace LazadaDiscordBot
         }
         static void Main(string[] args)
         {
+            Console.WriteLine("Bot initiated.");
             MainAsync().GetAwaiter().GetResult();
         }
         static async Task MainAsync()
@@ -36,17 +37,16 @@ namespace LazadaDiscordBot
                 Token = config.GetSection("DiscordLoginInfo")["DiscToken"],
                 TokenType = TokenType.Bot
             });
-
             // Change this into an external function
             discord.MessageCreated += (s, e) =>
             {
                 _ = Task.Run(async () =>
                 {
-                    if (e.Message.Content.Contains("!lazhelp"))
-                    {
+                    if (e.Message.Content.StartsWith("!lazhelp"))
+                    {   
                         IMessageFormatter formatter = new HelpMessageFormat(e);
                         await formatter.SendMessage();
-                    } else if (e.Message.Content.Contains("!lazsearch") && e.Message.Author.Username != "SimpleHiBot")
+                    } else if (e.Message.Content.StartsWith("!lazsearch"))
                     {
                         Console.WriteLine($"Request : Search [{e.Message.Content.Remove(0, 11)}]");
                         string query = e.Message.Content.Remove(0, 11);
