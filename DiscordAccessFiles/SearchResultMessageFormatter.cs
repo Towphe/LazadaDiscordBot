@@ -9,22 +9,25 @@ using LazadaDiscordBot.LazadaAccessFiles;
 
 namespace LazadaDiscordBot.DiscordAccessFiles
 {
-    class SearchResultMessageFormatter
+    class SearchResultMessageFormatter : IMessageFormatter
     {
         private MessageCreateEventArgs ctx;
         public SearchResultMessageFormatter(MessageCreateEventArgs c)
         {
             ctx = c;
         }
-        public async void SendProducts(List<Product> productResults)
+        public Task SendMessage(List<Product> productResults)
         {
-            // Format this in a good looking way
-            string message = "";
-            foreach (Product p in productResults)
+            return Task.Run(() =>
             {
-                message += $"Product: {p.ProductName}, Price: {p.Price}\n";
-            }
-            var msg = await new DiscordMessageBuilder().WithContent($"{message}").SendAsync(ctx.Channel);
+                string message = "";
+                for (int i=0; i<3; i++)
+                {
+                    message += $"Product: {productResults[i].ProductName}\nPrice: {productResults[i].Price}\n";
+                }
+                var msg = new DiscordMessageBuilder().WithContent($"{message}").SendAsync(ctx.Channel);
+            });
+            // Format this in a good looking way
         }
     }
 }

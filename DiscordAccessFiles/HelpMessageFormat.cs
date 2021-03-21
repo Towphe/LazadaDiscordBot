@@ -5,6 +5,7 @@ using DSharpPlus;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using System.Text;
+using LazadaDiscordBot.LazadaAccessFiles;
 
 namespace LazadaDiscordBot.DiscordAccessFiles
 {
@@ -15,10 +16,14 @@ namespace LazadaDiscordBot.DiscordAccessFiles
         {
             ctx = c;
         }
-        public async void SendMessage()
+        public Task SendMessage(List<Product> productList = null)
         {
-            // Format this in a good looking way
-            var msg = await new DiscordMessageBuilder().WithContent($"LazBotPH is a discord bot that allows you to search Lazada thru Discord! To search, kindly type: !lazsearch [product]").SendAsync(ctx.Channel);
+            return Task.Run(() => 
+            {
+                var msg = new DiscordMessageBuilder().WithContent($"LazBotPH is a discord bot that allows you to search Lazada thru Discord! To search, kindly type: !lazsearch [product]").SendAsync(ctx.Channel);
+                Console.WriteLine("Request : Help");
+            });
+            // Format this in a good looking way    
         }
     }
 }
